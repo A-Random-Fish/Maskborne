@@ -23,8 +23,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         rollDuration -= Time.deltaTime;
+        abilityOneCooldown -= Time.deltaTime;
 
-        if (abilityOneCooldown < 0f && rollDuration > 0f)
+        if (rollDuration > 0f)
         {
             invulnerable = true;
             rollSpeed = 4f;
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = movement * (moveSpeed * rollSpeed);
+        rb.linearVelocity = movement * moveSpeed * rollSpeed;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -53,8 +54,9 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case 1:
-                    if (abilityOneCooldown)
+                    if (abilityOneCooldown < 0f)
                     {
+                        abilityOneCooldown = 5f;
                         rollDuration = 0.2f;
                     }
                     break;
