@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float abilityThreeCooldown;
 
     GameObject CursorAimer;
-    public string maskEquipped;
-    bool invulnerable = false;
 
+    public string maskEquipped;
+
+    bool invulnerable = false;
+    bool rotStop = false;
     bool swapping;
 
     [SerializeField] GameObject maskWheel;
@@ -41,11 +43,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        CursorAimer.transform.rotation = rotation;
-
+        if (!rotStop)
+        {
+            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            CursorAimer.transform.rotation = rotation;
+        }
+        // JACOB I JUST MADE IT SO IT STOPS ROTATING THE ARC WHEN IT SWINGS DONT WORRY!
 
         //Timers:
         rollDuration -= Time.deltaTime;
@@ -62,6 +67,12 @@ public class PlayerController : MonoBehaviour
         {
             invulnerable = false;
             rollSpeed = 1f;
+        }
+
+        //Wolf ability two (rotStop disabled)
+        if (wolfAbilityTwoCooldown < 0f)
+        {
+            rotStop = false;
         }
 
         //swapping menu
@@ -137,6 +148,7 @@ public class PlayerController : MonoBehaviour
                     if (wolfAbilityTwoCooldown < 0f)
                     {
                         Debug.Log("Attack");
+                        rotStop = true;
                         wolfAbilityTwoCooldown = 2f;
                         WolfClawAnim.SetBool("Active", true);
                     }
