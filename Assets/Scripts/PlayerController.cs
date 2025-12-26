@@ -6,14 +6,17 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
+    Animator WolfClawAnim;
+
     Vector2 movement;
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float rollSpeed = 1f;
     [SerializeField] float rollDuration;
     [SerializeField] float wolfAbilityOneCooldown;
-    [SerializeField] float abilityTwoCooldown;
+    [SerializeField] float wolfAbilityTwoCooldown;
     [SerializeField] float abilityThreeCooldown;
 
+    GameObject CursorAimer;
     public string maskEquipped;
     bool invulnerable = false;
 
@@ -31,14 +34,25 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();   //Grabs the Rigidbody2D without having to place it into the script
+        CursorAimer = GameObject.Find("CursorDirection");
+        WolfClawAnim = GameObject.Find("ClawArc").GetComponent<Animator>();
     }
 
     void Update()
     {
+        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        CursorAimer.transform.rotation = rotation;
+
+
+        //Timers:
         rollDuration -= Time.deltaTime;
         wolfAbilityOneCooldown -= Time.deltaTime;
+        wolfAbilityTwoCooldown -= Time.deltaTime;
 
+        //Wolf ability one (dodge)
         if (rollDuration > 0f)
         {
             invulnerable = true;
@@ -63,23 +77,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() //Movement for the player
     {
         rb.linearVelocity = movement * moveSpeed * rollSpeed;
     }
 
-    public void Move(InputAction.CallbackContext context)
+    public void Move(InputAction.CallbackContext context) //Checks for input from the movement keys (WASD)
     {
         movement = context.ReadValue<Vector2>();
     }
 
-    public void Interact(InputAction.CallbackContext context)
+    public void Interact(InputAction.CallbackContext context) //Checks for input from the interaction button 'E' and acts on it.
     {
         if (context.performed && canInteract)
         {
-            if (interactType == "Shop")
+            if (interactType == "Shop") //Checks if the 'E' button is interacting with the shop trigger.
             {
-                inv.InventoryDisplay(!inv.showInventory);
+                inv.InventoryDisplay(!inv.showInventory); //Displays the UI for the masks.
             }
         }
     }
@@ -93,17 +107,22 @@ public class PlayerController : MonoBehaviour
                 case "WolfMask":
                     if (wolfAbilityOneCooldown < 0f)
                     {
-                        wolfAbilityOneCooldown = 5f;
+                        wolfAbilityOneCooldown = 1f;
                         rollDuration = 0.2f;
                     }
                     break;
-                case "GourdMask":
-                    Console.WriteLine("GourdMask Ability 1");
+                case "FerretMask":
+                    Console.WriteLine("");
                     break;
                 case "SnailMask":
-                    Console.WriteLine("Mask 3 Ability 1");
+                    Console.WriteLine("");
                     break;
-
+                case "EelMask":
+                    Console.WriteLine("");
+                    break;
+                case "CrowMask":
+                    Console.WriteLine("");
+                    break;
             }
         }
     }
@@ -115,13 +134,23 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case "WolfMask":
-                    Console.WriteLine("Mask 1 Ability 2");
+                    if (wolfAbilityTwoCooldown < 0f)
+                    {
+                        wolfAbilityTwoCooldown = 2f;
+                        WolfClawAnim.SetBool("Active", true);
+                    }
                     break;
-                case "GourdMask":
-                    Console.WriteLine("Mask 2 Ability 2");
+                case "FerretMask":
+                    Console.WriteLine("");
                     break;
                 case "SnailMask":
-                    Console.WriteLine("Mask 3 Ability 3");
+                    Console.WriteLine("");
+                    break;
+                case "CrowMask":
+                    Console.WriteLine("");
+                    break;
+                case "EelMask":
+                    Console.WriteLine("");
                     break;
 
             }
@@ -135,13 +164,19 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case "WolfMask":
-                    Console.WriteLine("Mask 1 Ability 3");
+                    Console.WriteLine("");
                     break;
-                case "GourdMask":
-                    Console.WriteLine("Mask 2 Ability 3");
+                case "FerretMask":
+                    Console.WriteLine("");
                     break;
                 case "SnailMask":
-                    Console.WriteLine("Mask 3 Ability 3");
+                    Console.WriteLine("");
+                    break;
+                case "EelMask":
+                    Console.WriteLine("");
+                    break;
+                case "CrowMask":
+                    Console.WriteLine("");
                     break;
 
             }
