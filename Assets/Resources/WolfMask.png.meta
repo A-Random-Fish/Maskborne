@@ -5,27 +5,6 @@ TextureImporter:
   - first:
       213: 2780598773786653579
     second: WolfMask_0
-  - first:
-      213: -5414103568775010485
-    second: WolfMask_1
-  - first:
-      213: 2095237126432486797
-    second: WolfMask_2
-  - first:
-      213: 4288753386954777019
-    second: WolfMask_3
-  - first:
-      213: 9079060791702103675
-    second: WolfMask_4
-  - first:
-      213: -6125821501744306191
-    second: WolfMask_5
-  - first:
-      213: 3316281051388676491
-    second: WolfMask_6
-  - first:
-      213: -5440023044921584806
-    second: WolfMask_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,10 +103,10 @@ TextureImporter:
       name: WolfMask_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 55
-        width: 19
-        height: 19
+        x: 7
+        y: 1
+        width: 66
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,160 +117,6 @@ TextureImporter:
       bones: []
       spriteID: b83b07e3adba69620800000000000000
       internalID: 2780598773786653579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfMask_1
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 54
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b47adf54d7d3dd4b0800000000000000
-      internalID: -5414103568775010485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfMask_2
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 53
-        width: 10
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d85f731c017c31d10800000000000000
-      internalID: 2095237126432486797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfMask_3
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 50
-        width: 14
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb161be8b76b48b30800000000000000
-      internalID: 4288753386954777019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfMask_4
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 12
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b76a497efad4ffd70800000000000000
-      internalID: 9079060791702103675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfMask_5
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 14
-        width: 14
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1f7a417dcc5bcfaa0800000000000000
-      internalID: -6125821501744306191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfMask_6
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 12
-        width: 9
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b89816bbb0cc50e20800000000000000
-      internalID: 3316281051388676491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfMask_7
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 11
-        width: 14
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a539285fcd72184b0800000000000000
-      internalID: -5440023044921584806
       vertices: []
       indices: 
       edges: []
@@ -311,13 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       WolfMask_0: 2780598773786653579
-      WolfMask_1: -5414103568775010485
-      WolfMask_2: 2095237126432486797
-      WolfMask_3: 4288753386954777019
-      WolfMask_4: 9079060791702103675
-      WolfMask_5: -6125821501744306191
-      WolfMask_6: 3316281051388676491
-      WolfMask_7: -5440023044921584806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
