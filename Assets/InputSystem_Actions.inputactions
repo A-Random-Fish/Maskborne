@@ -230,7 +230,7 @@
                 {
                     "name": "",
                     "id": "877e06fb-e4b1-4f47-b453-2cf52d851c4e",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -241,7 +241,7 @@
                 {
                     "name": "",
                     "id": "e33db19c-5aa6-4eab-8b68-dc34f910112f",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

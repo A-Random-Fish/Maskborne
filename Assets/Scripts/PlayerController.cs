@@ -49,12 +49,8 @@ public class PlayerController : MonoBehaviour
             invulnerable = false;
             rollSpeed = 1f;
         }
-    }
 
-    private void FixedUpdate()
-    {
-        rb.linearVelocity = movement * moveSpeed * rollSpeed;
-
+        //swapping menu
         if (swapping)
         {
             Time.timeScale = 0.1f;
@@ -65,6 +61,11 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1f;
             maskWheel.SetActive(false);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.linearVelocity = movement * moveSpeed * rollSpeed;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -85,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
     public void Ability1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !swapping)
         {
             switch (maskEquipped)
             {
@@ -109,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
     public void Ability2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !swapping)
         {
             switch (maskEquipped)
             {
@@ -129,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     public void Ability3(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !swapping)
         {
             switch (maskEquipped)
             {
