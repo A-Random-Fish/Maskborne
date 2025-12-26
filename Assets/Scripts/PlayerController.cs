@@ -11,9 +11,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rollSpeed = 1f;
     [SerializeField] float rollDuration;
     [SerializeField] float abilityOneCooldown;
+    [SerializeField] float abilityTwoCooldown;
+    [SerializeField] float abilityThreeCooldown;
 
-    [SerializeField] int maskEquipped;
+    public int maskEquipped;
     bool invulnerable = false;
+
+    [Header("Inventory and Shop")]
+    public bool canInteract;
+    public string interactType;
+    [SerializeField] Inventory inv;
+
+    [Header("Moneys")]
+    public int souls;
 
     void Start()
     {
@@ -47,6 +57,17 @@ public class PlayerController : MonoBehaviour
         movement = context.ReadValue<Vector2>();
     }
 
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (context.performed && canInteract)
+        {
+            if (interactType == "Shop")
+            {
+                inv.InventoryDisplay(!inv.showInventory);
+            }
+        }
+    }
+
     public void Ability1(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -61,10 +82,10 @@ public class PlayerController : MonoBehaviour
                     }
                     break;
                 case 2:
-                    Console.WriteLine("Placeholder");
+                    Console.WriteLine("Mask 2 Ability 1");
                     break;
                 case 3:
-                    Console.WriteLine("Placeholder");
+                    Console.WriteLine("Mask 3 Ability 1");
                     break;
 
             }
@@ -78,13 +99,13 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case 1:
-                    Console.WriteLine("Placeholder");
+                    Console.WriteLine("Mask 1 Ability 2");
                     break;
                 case 2:
-                    Console.WriteLine("Placeholder");
+                    Console.WriteLine("Mask 2 Ability 2");
                     break;
                 case 3:
-                    Console.WriteLine("Placeholder");
+                    Console.WriteLine("Mask 3 Ability 3");
                     break;
 
             }
@@ -98,16 +119,37 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case 1:
-                    Console.WriteLine("Placeholder");
+                    Console.WriteLine("Mask 1 Ability 3");
                     break;
                 case 2:
-                    Console.WriteLine("Placeholder");
+                    Console.WriteLine("Mask 2 Ability 3");
                     break;
                 case 3:
-                    Console.WriteLine("Placeholder");
+                    Console.WriteLine("Mask 3 Ability 3");
                     break;
 
             }
+        }
+    }
+
+    //Interact Stuff
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            canInteract = true;
+            interactType = other.gameObject.tag;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            canInteract = false;
+            interactType = "None";
+            inv.InventoryDisplay(false);
         }
     }
 }
