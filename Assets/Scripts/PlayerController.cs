@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float rollSpeed = 1f;
     [SerializeField] float rollDuration;
-    [SerializeField] float abilityOneCooldown;
+    [SerializeField] float wolfAbilityOneCooldown;
     [SerializeField] float abilityTwoCooldown;
     [SerializeField] float abilityThreeCooldown;
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         rollDuration -= Time.deltaTime;
-        abilityOneCooldown -= Time.deltaTime;
+        wolfAbilityOneCooldown -= Time.deltaTime;
 
         if (rollDuration > 0f)
         {
@@ -91,9 +91,9 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case "WolfMask":
-                    if (abilityOneCooldown < 0f)
+                    if (wolfAbilityOneCooldown < 0f)
                     {
-                        abilityOneCooldown = 5f;
+                        wolfAbilityOneCooldown = 5f;
                         rollDuration = 0.2f;
                     }
                     break;
