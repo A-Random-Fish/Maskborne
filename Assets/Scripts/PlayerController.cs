@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     public int maskEquipped;
     bool invulnerable = false;
 
+    bool swapping;
+
+    [SerializeField] GameObject maskWheel;
+
     [Header("Inventory and Shop")]
     public bool canInteract;
     public string interactType;
@@ -50,6 +54,17 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = movement * moveSpeed * rollSpeed;
+
+        if (swapping)
+        {
+            Time.timeScale = 0.1f;
+            maskWheel.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            maskWheel.SetActive(false);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -129,6 +144,19 @@ public class PlayerController : MonoBehaviour
                     break;
 
             }
+        }
+    }
+
+    public void Swap(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            swapping = true;
+        }
+
+        if (context.canceled)
+        {
+            swapping = false;
         }
     }
 
