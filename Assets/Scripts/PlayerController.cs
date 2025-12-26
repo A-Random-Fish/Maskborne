@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float abilityTwoCooldown;
     [SerializeField] float abilityThreeCooldown;
 
-    public int maskEquipped;
+    public string maskEquipped;
     bool invulnerable = false;
 
     bool swapping;
@@ -90,17 +90,17 @@ public class PlayerController : MonoBehaviour
         {
             switch (maskEquipped)
             {
-                case 1:
+                case "WolfMask":
                     if (abilityOneCooldown < 0f)
                     {
                         abilityOneCooldown = 5f;
                         rollDuration = 0.2f;
                     }
                     break;
-                case 2:
-                    Console.WriteLine("Mask 2 Ability 1");
+                case "GourdMask":
+                    Console.WriteLine("GourdMask Ability 1");
                     break;
-                case 3:
+                case "SnailMask":
                     Console.WriteLine("Mask 3 Ability 1");
                     break;
 
@@ -114,13 +114,13 @@ public class PlayerController : MonoBehaviour
         {
             switch (maskEquipped)
             {
-                case 1:
+                case "WolfMask":
                     Console.WriteLine("Mask 1 Ability 2");
                     break;
-                case 2:
+                case "GourdMask":
                     Console.WriteLine("Mask 2 Ability 2");
                     break;
-                case 3:
+                case "SnailMask":
                     Console.WriteLine("Mask 3 Ability 3");
                     break;
 
@@ -134,13 +134,13 @@ public class PlayerController : MonoBehaviour
         {
             switch (maskEquipped)
             {
-                case 1:
+                case "WolfMask":
                     Console.WriteLine("Mask 1 Ability 3");
                     break;
-                case 2:
+                case "GourdMask":
                     Console.WriteLine("Mask 2 Ability 3");
                     break;
-                case 3:
+                case "SnailMask":
                     Console.WriteLine("Mask 3 Ability 3");
                     break;
 

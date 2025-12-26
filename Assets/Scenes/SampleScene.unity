@@ -1278,7 +1278,7 @@ MonoBehaviour:
   abilityOneCooldown: 0
   abilityTwoCooldown: 0
   abilityThreeCooldown: 0
-  maskEquipped: 1
+  maskEquipped: 
   maskWheel: {fileID: 1664897344}
   canInteract: 0
   interactType: 
@@ -1896,6 +1896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9998c02e103682c4abd1b411622ecf8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  inv: {fileID: 1121541485}
+  pc: {fileID: 1255245337}
   selectedWheelSlot: 0
   slotSelect1: {fileID: 21300000, guid: 115638f7f902be6499a03fdd84040267, type: 3}
   slotSelect2: {fileID: 21300000, guid: 69cdaa4d1cb440846ab0629daafaba8b, type: 3}
