@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour
                 case "WolfMask":
                     if (wolfAbilityTwoCooldown < 0f)
                     {
+                        Debug.Log("Attack");
                         wolfAbilityTwoCooldown = 2f;
                         WolfClawAnim.SetBool("Active", true);
                     }

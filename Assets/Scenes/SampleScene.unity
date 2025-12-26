@@ -1308,7 +1308,7 @@ MonoBehaviour:
   rollSpeed: 1
   rollDuration: -0.1
   wolfAbilityOneCooldown: 0
-  abilityTwoCooldown: 0
+  wolfAbilityTwoCooldown: 0
   abilityThreeCooldown: 0
   maskEquipped: 
   maskWheel: {fileID: 1664897344}
@@ -1460,7 +1460,19 @@ MonoBehaviour:
     m_ActionId: ca67aa81-77a3-4205-8847-379583f55d47
     m_ActionName: 'Player/Ability1[/Mouse/leftButton]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1255245337}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Ability2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 167b4236-5763-4425-b2ea-5890236131d2
     m_ActionName: 'Player/Ability2[/Mouse/middleButton]'
   - m_PersistentCalls:
@@ -1605,7 +1617,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1445631342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,6 +1959,7 @@ GameObject:
   - component: {fileID: 1804277251}
   - component: {fileID: 1804277252}
   - component: {fileID: 1804277253}
+  - component: {fileID: 1804277254}
   m_Layer: 0
   m_Name: ClawArc
   m_TagString: Untagged
@@ -2095,6 +2108,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1804277254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804277249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b2a782a23bbc54083cfbfba80dd417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1965270829
 GameObject:
   m_ObjectHideFlags: 0
