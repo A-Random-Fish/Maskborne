@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -45,6 +46,10 @@ public class PlayerController : MonoBehaviour
     float snailAbilityTwoCooldown;
 
     public bool snailAbilityOneActive = true;
+
+    //KB
+    bool KBActive;
+    public float KBDuration;
 
     void Start()
     {
@@ -262,5 +267,22 @@ public class PlayerController : MonoBehaviour
             interactType = "None";
             inv.InventoryDisplay(false);
         }
+    }
+
+    public IEnumerator<object> Knockback(float knockbackDuration, float knockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (knockbackDuration > timer)
+        {
+            canMove = false;
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * knockbackPower);
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        yield return 0;
+        canMove = true;
     }
 }

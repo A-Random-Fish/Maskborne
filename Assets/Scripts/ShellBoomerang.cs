@@ -47,4 +47,13 @@ public class ShellBoomerang : MonoBehaviour
             pc.snailAbilityOneActive = true;
         }
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("monster"))
+        {
+            MonsterHealthComponent mhc = other.gameObject.GetComponent<MonsterHealthComponent>();
+            mhc.MdamageIgnoreIframes(0.1f);
+        }
+    }
 }

@@ -13,4 +13,13 @@ public class ClawArcScript : MonoBehaviour
     {
         anim.SetBool("Active", false);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("monster"))
+        {
+            MonsterHealthComponent mhc = other.gameObject.GetComponent<MonsterHealthComponent>();
+            mhc.Mdamage(1);
+        }
+    }
 }
