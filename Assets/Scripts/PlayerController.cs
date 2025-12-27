@@ -16,11 +16,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float wolfAbilityTwoCooldown;
     [SerializeField] float abilityThreeCooldown;
 
+    public bool canMove;
+
     GameObject CursorAimer;
 
     public string maskEquipped;
 
-    bool invulnerable = false;
+    public bool invulnerable = false;
     bool rotStop = false;
     bool swapping;
 
@@ -37,6 +39,8 @@ public class PlayerController : MonoBehaviour
     [Header("Snail Mask")]
     [SerializeField] GameObject shellBoomerang;
     [SerializeField] Transform boomerangSpawnLoc;
+    [SerializeField] GameObject snailShell;
+    float snailAbilityTwoCooldown;
 
     public bool snailAbilityOneActive = true;
 
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour
         rollDuration -= Time.deltaTime;
         wolfAbilityOneCooldown -= Time.deltaTime;
         wolfAbilityTwoCooldown -= Time.deltaTime;
+        snailAbilityTwoCooldown -= Time.deltaTime;
 
         //Wolf ability one (dodge)
         if (rollDuration > 0f)
@@ -96,7 +101,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() //Movement for the player
     {
-        rb.linearVelocity = movement * moveSpeed * rollSpeed;
+        if (canMove)
+            rb.linearVelocity = movement * moveSpeed * rollSpeed;
+        else
+            rb.linearVelocity = Vector2.zero;
     }
 
     public void Move(InputAction.CallbackContext context) //Checks for input from the movement keys (WASD)
@@ -166,7 +174,13 @@ public class PlayerController : MonoBehaviour
                     Console.WriteLine("");
                     break;
                 case "SnailMask":
-                    Console.WriteLine("Shell Shield");
+                    if (snailAbilityTwoCooldown < 0f)
+                    {
+                        snailAbilityTwoCooldown = 10f;
+                        invulnerable = true;
+                        canMove = false;
+                        Instantiate(snailShell, this.gameObject.transform.position, Quaternion.identity);
+                    }
                     break;
                 case "CrowMask":
                     Console.WriteLine("");
