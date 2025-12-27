@@ -74,6 +74,11 @@ public class PlayerController : MonoBehaviour
             invulnerable = true;
             rollSpeed = 4f;
         }
+        else if (snailAbilityTwoCooldown > 9)
+        {
+            invulnerable = true;
+            rollSpeed = 1f;
+        }
         else
         {
             invulnerable = false;
