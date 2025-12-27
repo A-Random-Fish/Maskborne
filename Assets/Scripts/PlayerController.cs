@@ -34,6 +34,12 @@ public class PlayerController : MonoBehaviour
     [Header("Moneys")]
     public int souls;
 
+    [Header("Snail Mask")]
+    [SerializeField] GameObject shellBoomerang;
+    [SerializeField] Transform boomerangSpawnLoc;
+
+    public bool snailAbilityOneActive = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();   //Grabs the Rigidbody2D without having to place it into the script
@@ -70,7 +76,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Wolf ability two (rotStop disabled)
-        if (wolfAbilityTwoCooldown < 0f)
+        if (wolfAbilityOneCooldown < 0f)
         {
             rotStop = false;
         }
@@ -118,15 +124,20 @@ public class PlayerController : MonoBehaviour
                 case "WolfMask":
                     if (wolfAbilityOneCooldown < 0f)
                     {
-                        wolfAbilityOneCooldown = 1f;
-                        rollDuration = 0.2f;
+                        rotStop = true;
+                        wolfAbilityOneCooldown = 0.5f;
+                        WolfClawAnim.SetBool("Active", true);
                     }
                     break;
                 case "FerretMask":
                     Console.WriteLine("");
                     break;
                 case "SnailMask":
-                    Console.WriteLine("");
+                    if (snailAbilityOneActive)
+                    {
+                        snailAbilityOneActive = false;
+                        Instantiate(shellBoomerang, boomerangSpawnLoc.position, Quaternion.identity);
+                    }
                     break;
                 case "EelMask":
                     Console.WriteLine("");
@@ -147,17 +158,15 @@ public class PlayerController : MonoBehaviour
                 case "WolfMask":
                     if (wolfAbilityTwoCooldown < 0f)
                     {
-                        Debug.Log("Attack");
-                        rotStop = true;
-                        wolfAbilityTwoCooldown = 2f;
-                        WolfClawAnim.SetBool("Active", true);
+                        wolfAbilityTwoCooldown = 1f;
+                        rollDuration = 0.2f;
                     }
                     break;
                 case "FerretMask":
                     Console.WriteLine("");
                     break;
                 case "SnailMask":
-                    Console.WriteLine("");
+                    Console.WriteLine("Shell Shield");
                     break;
                 case "CrowMask":
                     Console.WriteLine("");

@@ -208,7 +208,7 @@
                 {
                     "name": "",
                     "id": "e4822396-eeef-48dc-99ee-02df29ed790d",
-                    "path": "<Mouse>/middleButton",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -219,7 +219,7 @@
                 {
                     "name": "",
                     "id": "b4cf0af5-d914-4bf8-8c7f-ae6328c80f73",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
