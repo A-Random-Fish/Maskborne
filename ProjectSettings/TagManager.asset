@@ -7,6 +7,10 @@ TagManager:
   - Shop
   - player
   - monster
+  - PlayerDmg
+  - SpawnPoint
+  - Rooms
+  - ClosedRoom
   layers:
   - Default
   - TransparentFX

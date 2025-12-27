@@ -7,7 +7,6 @@ public class ChaserEnemy : MonoBehaviour
 
     [SerializeField] float sightRange;
     [SerializeField] float moveSpeed;
-    bool moving;
 
     void Start()
     {
@@ -20,7 +19,6 @@ public class ChaserEnemy : MonoBehaviour
         if (Vector2.Distance (Player.transform.position, transform.position) < sightRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, moveSpeed);
-            moving = true;
         }
     }
 }

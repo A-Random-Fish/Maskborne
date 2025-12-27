@@ -11,6 +11,8 @@ public class MonsterHealthComponent : MonoBehaviour
 
     float iFrames;
 
+    [SerializeField] int soulCount;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,6 +64,10 @@ public class MonsterHealthComponent : MonoBehaviour
 
     void Death()
     {
+        for (int i = 0; i < soulCount; i++)
+        {
+            Instantiate(Resources.Load("Soul") as GameObject, new Vector2(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

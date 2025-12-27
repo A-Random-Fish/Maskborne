@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
 
     public bool snailAbilityOneActive = true;
 
+    [Header("GourdMask")]
+    [SerializeField] GameObject gourdBoulder;
+    float gourdAbilityOneCooldown;
+
     //KB
     bool KBActive;
     public float KBDuration;
@@ -73,6 +77,7 @@ public class PlayerController : MonoBehaviour
         wolfAbilityOneCooldown -= Time.deltaTime;
         wolfAbilityTwoCooldown -= Time.deltaTime;
         snailAbilityTwoCooldown -= Time.deltaTime;
+        gourdAbilityOneCooldown -= Time.deltaTime;
 
         //Wolf ability one (dodge)
         if (rollDuration > 0f)
@@ -150,8 +155,12 @@ public class PlayerController : MonoBehaviour
                         WolfClawAnim.SetBool("Active", true);
                     }
                     break;
-                case "FerretMask":
-                    Console.WriteLine("");
+                case "GourdMask":
+                    if (gourdAbilityOneCooldown < 0f)
+                    {
+                        gourdAbilityOneCooldown = 1f;
+                        Instantiate(gourdBoulder, boomerangSpawnLoc.position, Quaternion.identity);
+                    }
                     break;
                 case "SnailMask":
                     if (snailAbilityOneActive)

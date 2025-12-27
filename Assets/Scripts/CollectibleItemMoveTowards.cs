@@ -18,7 +18,10 @@ public class CollectableItemMoveTowards : MonoBehaviour
     {
         targetLoc = GameObject.Find("Player").transform;
         transform.position = Vector2.MoveTowards(transform.position, targetLoc.position, speed);
-        speed += 0.0005f;
+        if (Vector2.Distance(targetLoc.position, transform.position) < 5f)
+            speed += 0.0005f;
+        else
+            speed = 0;
     }
 
     void OnTriggerEnter2D(Collider2D other)
