@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float wolfAbilityTwoCooldown;
     [SerializeField] float abilityThreeCooldown;
 
+    public int playerCurrentDmg = 0;
+
     public bool canMove;
 
     GameObject CursorAimer;
@@ -60,7 +62,6 @@ public class PlayerController : MonoBehaviour
             Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             CursorAimer.transform.rotation = rotation;
         }
-        // JACOB I JUST MADE IT SO IT STOPS ROTATING THE ARC WHEN IT SWINGS DONT WORRY!
 
         //Timers:
         rollDuration -= Time.deltaTime;
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
         if (wolfAbilityOneCooldown < 0f)
         {
             rotStop = false;
+            playerCurrentDmg = 0;
         }
 
         //swapping menu
@@ -134,9 +136,10 @@ public class PlayerController : MonoBehaviour
         {
             switch (maskEquipped)
             {
-                case "WolfMask":
+                case "WolfMask": //Performs the wolf claw ability, also makes sure the rotation stops of the aimer.
                     if (wolfAbilityOneCooldown < 0f)
                     {
+                        playerCurrentDmg = 5;
                         rotStop = true;
                         wolfAbilityOneCooldown = 0.5f;
                         WolfClawAnim.SetBool("Active", true);
@@ -148,6 +151,7 @@ public class PlayerController : MonoBehaviour
                 case "SnailMask":
                     if (snailAbilityOneActive)
                     {
+                        playerCurrentDmg = 4;
                         snailAbilityOneActive = false;
                         Instantiate(shellBoomerang, boomerangSpawnLoc.position, Quaternion.identity);
                     }
@@ -168,9 +172,10 @@ public class PlayerController : MonoBehaviour
         {
             switch (maskEquipped)
             {
-                case "WolfMask":
+                case "WolfMask": //Ability to do a quick dash with a cooldown.
                     if (wolfAbilityTwoCooldown < 0f)
                     {
+                        playerCurrentDmg = 0;
                         wolfAbilityTwoCooldown = 1f;
                         rollDuration = 0.2f;
                     }
@@ -181,7 +186,8 @@ public class PlayerController : MonoBehaviour
                 case "SnailMask":
                     if (snailAbilityTwoCooldown < 0f)
                     {
-                        snailAbilityTwoCooldown = 10f;
+                        playerCurrentDmg = 2; //Placeholder for the parry mechanic
+                        snailAbilityTwoCooldown = 5f;
                         invulnerable = true;
                         canMove = false;
                         Instantiate(snailShell, this.gameObject.transform.position, Quaternion.identity);
@@ -205,7 +211,7 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case "WolfMask":
-                    Console.WriteLine("");
+                    
                     break;
                 case "FerretMask":
                     Console.WriteLine("");

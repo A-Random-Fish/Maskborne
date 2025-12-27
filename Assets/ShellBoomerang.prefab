@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3762242915378353620}
   m_Layer: 0
   m_Name: ShellBoomerang
-  m_TagString: Untagged
+  m_TagString: PlayerDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
