@@ -13,7 +13,6 @@ public class ThornyShell : MonoBehaviour
     void EndShell()
     {
         pc.canMove = true;
-        pc.invulnerable = false;
         Destroy(this.gameObject);
     }
 }

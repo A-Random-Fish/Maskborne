@@ -78,13 +78,13 @@ public class PlayerController : MonoBehaviour
         snailAbilityTwoCooldown -= Time.deltaTime;
         gourdAbilityOneCooldown -= Time.deltaTime;
 
-        //Wolf ability one (dodge)
-        if (rollDuration > 0f)
+        //Damage negation thingies lol
+        if (rollDuration > 0f) //Wolf mask dodge roll
         {
             invulnerable = true;
             rollSpeed = 4f;
         }
-        else if (snailAbilityTwoCooldown > 9)
+        else if (snailAbilityTwoCooldown > 3.84f) //Snail mask shell ability
         {
             invulnerable = true;
             rollSpeed = 1f;
@@ -199,7 +199,6 @@ public class PlayerController : MonoBehaviour
                 case "SnailMask":
                     if (snailAbilityTwoCooldown < 0f)
                     {
-                        playerCurrentDmg = 2; //Placeholder for the parry mechanic
                         snailAbilityTwoCooldown = 5f;
                         invulnerable = true;
                         canMove = false;
@@ -224,7 +223,7 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case "WolfMask":
-                    
+                    Console.WriteLine("");
                     break;
                 case "FerretMask":
                     Console.WriteLine("");
@@ -279,18 +278,18 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator<object> Knockback(float knockbackDuration, float knockbackPower, Transform obj)
     {
-        float timer = 0;
+            float timer = 0;
 
-        while (knockbackDuration > timer)
-        {
-            canMove = false;
-            timer += Time.deltaTime;
-            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
-            rb.AddForce(-direction * knockbackPower);
-        }
+            while (knockbackDuration > timer)
+            {
+                canMove = false;
+                timer += Time.deltaTime;
+                Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+                rb.AddForce(-direction * knockbackPower);
+            }
 
-        rb.linearVelocity = Vector2.zero;
-        yield return 0;
-        canMove = true;
+            rb.linearVelocity = Vector2.zero;
+            yield return 0;
+            canMove = true;
     }
 }

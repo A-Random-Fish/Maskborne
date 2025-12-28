@@ -24,7 +24,7 @@ public class HealthComponent : MonoBehaviour
 
     public void Damage(int damage)
     {
-        if (iFrames <= 0f)
+        if (!pc.invulnerable && iFrames <= 0f)
         {
             iFrames = 1f;
             Debug.Log("Hit");
