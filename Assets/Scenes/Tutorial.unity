@@ -2567,7 +2567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   keyCollected: 0
-  tutorialRift: 0
+  tutorialRift: 1
 --- !u!95 &1272620339
 Animator:
   serializedVersion: 7

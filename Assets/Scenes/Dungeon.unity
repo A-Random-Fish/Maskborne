@@ -169,7 +169,9 @@ MonoBehaviour:
   closedRoom: {fileID: 4891524718795249455, guid: 6be6347bc68c26d4ca4d8f04c4c2ae15, type: 3}
   rooms: []
   waitTime: 2
-  boss: {fileID: 4824991089685592995, guid: 06bad368b99fbd342b2f71294db1abfd, type: 3}
+  boss:
+  - {fileID: 4824991089685592995, guid: 06bad368b99fbd342b2f71294db1abfd, type: 3}
+  - {fileID: 3412052892353830643, guid: 10e636b95131fc84b9308567c75c1ead, type: 3}
 --- !u!4 &49743648
 Transform:
   m_ObjectHideFlags: 0
@@ -388,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   keyCollected: 0
+  tutorialRift: 0
 --- !u!58 &165493005
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3501,7 +3504,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Boss has Fallen! Take their RIFT KEY and return to the beginning
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
   m_sharedMaterial: {fileID: 4063953961292970480, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}

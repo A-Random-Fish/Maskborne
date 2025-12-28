@@ -15,7 +15,7 @@ public class RoomTemplates : MonoBehaviour
 
     public float waitTime;
     bool spawnedBoss;
-    public GameObject boss;
+    [SerializeField] List<GameObject> boss;
     GameObject bossObject;
 
     GameObject bossText;
@@ -34,7 +34,7 @@ public class RoomTemplates : MonoBehaviour
             {
                 if (i == rooms.Count-1)
                 {
-                    bossObject = Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
+                    bossObject = Instantiate(boss[Random.Range(0, boss.Count)], rooms[i].transform.position, Quaternion.identity);
                     spawnedBoss = true;
                 }
             }
