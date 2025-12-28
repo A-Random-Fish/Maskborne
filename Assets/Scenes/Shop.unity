@@ -149,6 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   soulsText: {fileID: 602353963}
+  healthSoulsCost: 0
+  damageSoulsCost: 0
+  cooldownSoulsCost: 0
 --- !u!4 &242710473
 Transform:
   m_ObjectHideFlags: 0
@@ -459,7 +462,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 670277301}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 242710472}
+        m_TargetAssemblyTypeName: ShopUpdates, Assembly-CSharp
+        m_MethodName: CooldownUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &670277301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1057,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1503224156}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 242710472}
+        m_TargetAssemblyTypeName: ShopUpdates, Assembly-CSharp
+        m_MethodName: DamageUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1503224156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,7 +1328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1973769802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 242710472}
+        m_TargetAssemblyTypeName: ShopUpdates, Assembly-CSharp
+        m_MethodName: HealthUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1973769802
 MonoBehaviour:
   m_ObjectHideFlags: 0
