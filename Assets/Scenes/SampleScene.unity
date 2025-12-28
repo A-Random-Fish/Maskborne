@@ -563,7 +563,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -313.6, y: 77.8}
+  m_AnchoredPosition: {x: -313.6, y: 79}
   m_SizeDelta: {x: 110.31, y: 22.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232266141
@@ -590,8 +590,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
+  m_sharedMaterial: {fileID: 4063953961292970480, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1207,8 +1207,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
+  m_sharedMaterial: {fileID: 4063953961292970480, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1318,7 +1318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 341.2, y: -194.6}
+  m_AnchoredPosition: {x: 342.8, y: -194.6}
   m_SizeDelta: {x: 76.26, y: 33.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480544145
@@ -1345,8 +1345,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
+  m_sharedMaterial: {fileID: 4063953961292970480, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1370,8 +1370,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2428,8 +2428,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10/10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
+  m_sharedMaterial: {fileID: 4063953961292970480, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2453,13 +2453,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -3352,8 +3352,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Boss has Fallen! Take their RIFT KEY and return to the beginning
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
+  m_sharedMaterial: {fileID: 4063953961292970480, guid: 9d9861c2af51c5947a7fd5a424a91075, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3751,8 +3751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 86.51001, y: -215.3}
-  m_SizeDelta: {x: 93.93, y: 93.93}
+  m_AnchoredPosition: {x: 86.34799, y: -216.128}
+  m_SizeDelta: {x: 94.254, y: 94.756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530074375
 MonoBehaviour:
