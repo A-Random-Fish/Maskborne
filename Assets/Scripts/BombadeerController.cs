@@ -9,6 +9,7 @@ public class BombadeerController : MonoBehaviour
 
     bool rocketLaunched = false;
     float rocketCooldown = -0.1f;
+    float barrageCooldown = -0.1f;
     float playerToMeDistance;
 
     void Start()
@@ -21,21 +22,31 @@ public class BombadeerController : MonoBehaviour
     void Update()
     {
         rocketCooldown -= Time.deltaTime;
+        barrageCooldown -= Time.deltaTime;
 
         playerToMeDistance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log(playerToMeDistance);
 
-        if (playerToMeDistance < 10f && !rocketLaunched && rocketCooldown < 0f)
+        if (playerToMeDistance < 12f && !rocketLaunched && rocketCooldown < 0f)
         {
             rocketLaunched = true;
             Invoke("Attack", 1f);
+        }
+        else if (playerToMeDistance < 12f && barrageCooldown < 0f)
+        {
+            Invoke("BarrageAttack", 0.5f);
         }
     }
 
     void Attack()
     {
-        rocketCooldown = 5f;
+        rocketCooldown = 2f;
         Instantiate(rocketProjectile, player.transform.position, Quaternion.identity);
         rocketLaunched = false;
+    }
+
+    void BarrageAttack()
+    {
+        barrageCooldown = 10f;
+        Instantiate(rocketProjectile, player.transform.position, Quaternion.identity);
     }
 }
