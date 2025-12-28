@@ -20,6 +20,8 @@ public class RoomTemplates : MonoBehaviour
 
     GameObject bossText;
 
+    bool bossTextEnabled;
+
     void Awake()
     {
         bossText = GameObject.Find("BossDeadText");
@@ -44,8 +46,9 @@ public class RoomTemplates : MonoBehaviour
             waitTime -= Time.deltaTime;
         }
 
-        if (spawnedBoss == true && bossObject == null)
+        if (spawnedBoss == true && bossObject == null && !bossTextEnabled)
         {
+            bossTextEnabled = true;
             bossText.SetActive(true);
         }
     }
