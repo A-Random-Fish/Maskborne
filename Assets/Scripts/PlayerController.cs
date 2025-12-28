@@ -270,7 +270,7 @@ public class PlayerController : MonoBehaviour
                 case "GourdMask":
                     if (gourdAbilityOneCooldown < 0f)
                     {
-                        gourdAbilityOneCooldown = 1f;
+                        gourdAbilityOneCooldown = 2f;
                         Instantiate(gourdBoulder, boomerangSpawnLoc.position, Quaternion.identity);
                     }
                     break;
@@ -301,7 +301,7 @@ public class PlayerController : MonoBehaviour
                 case "GourdMask":
                     if (gourdAbilityTwoCooldown < 0f)
                     {
-                        gourdAbilityTwoCooldown = 5f;
+                        gourdAbilityTwoCooldown = 20f;
                         Instantiate(JackOFlames, boomerangSpawnLoc.position, Quaternion.identity);
                     }
                     break;
