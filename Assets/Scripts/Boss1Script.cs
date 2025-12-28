@@ -6,7 +6,8 @@ public class Boss1Script : MonoBehaviour
     Rigidbody2D rb;
 
     [SerializeField] float sightRange;
-    [SerializeField] float moveSpeed;
+    [SerializeField] float normalSpeed;
+    float moveSpeed;
 
     float timer;
 
@@ -36,11 +37,11 @@ public class Boss1Script : MonoBehaviour
     {
         if (other.CompareTag("Flames"))
         {
-            moveSpeed = moveSpeed / 2f;
+            moveSpeed = normalSpeed / 2f;
         }
         else
         {
-            moveSpeed = 5f;
+            moveSpeed = normalSpeed;
         }
     }
 }

@@ -7,7 +7,8 @@ public class ChaserEnemy : MonoBehaviour
     EnemyDetection ed;
 
     [SerializeField] float sightRange;
-    [SerializeField] float moveSpeed;
+    [SerializeField] float normalSpeed;
+    float moveSpeed;
 
     void Start()
     {
@@ -28,11 +29,11 @@ public class ChaserEnemy : MonoBehaviour
     {
         if (other.CompareTag("Flames"))
         {
-            moveSpeed = moveSpeed / 2f;
+            moveSpeed = normalSpeed / 2f;
         }
         else
         {
-            moveSpeed = 5f;
+            moveSpeed = normalSpeed;
         }
     }
 }

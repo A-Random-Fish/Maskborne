@@ -7,7 +7,7 @@ public class JackOFlames : MonoBehaviour
     void Start()
     {
         pc = GameObject.Find("Player").GetComponent<PlayerController>();
-        Invoke("EndFlames", 2f);
+        Invoke("EndFlames", 1f);
     }
 
     void EndFlames()

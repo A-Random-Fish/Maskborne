@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   sightRange: 7
-  moveSpeed: 2
+  normalSpeed: 3
 --- !u!114 &7045917383417362666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,3 +289,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790bd30db8ebb5f4b9f5a75dedf85f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerInRoom: 0

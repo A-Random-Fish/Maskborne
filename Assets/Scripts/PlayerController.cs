@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,9 +29,6 @@ public class PlayerController : MonoBehaviour
     public bool canInteract;
     public string interactType;
     [SerializeField] Inventory inv;
-
-    [Header("Moneys")]
-    public int souls;
 
     [Header("Wolf Mask")]
     [SerializeField] float wolfAbilityOneCooldown;
@@ -62,6 +61,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Sprite gourdMaskDown;
     [SerializeField] Sprite snailMaskUp;
     [SerializeField] Sprite snailMaskDown;
+
+    [Header("UI")]
+    [SerializeField] Image ability1;
+    [SerializeField] Image ability2;
+    [SerializeField] TextMeshProUGUI ability1text;
+    [SerializeField] TextMeshProUGUI ability2text;
 
     void Start()
     {
@@ -134,6 +139,27 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = wolfMaskDown;
             }
+
+            ability1.sprite = Resources.Load("WolfAbilityIcon1", typeof (Sprite)) as Sprite;
+            ability2.sprite = Resources.Load("WolfAbilityIcon2", typeof (Sprite)) as Sprite;
+
+            if (wolfAbilityOneCooldown <= 0)
+            {
+                ability1text.text = "Ready";
+            }
+            else
+            {
+                ability1text.text = "Charging...";
+            }
+
+            if (wolfAbilityTwoCooldown <= 0)
+            {
+                ability2text.text = "Ready";
+            }
+            else
+            {
+                ability2text.text = "Charging...";
+            }
         }
 
         if (maskEquipped == "GourdMask")
@@ -146,6 +172,27 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = gourdMaskDown;
             }
+
+            ability1.sprite = Resources.Load("PumpkinAbilityIcon1", typeof (Sprite)) as Sprite;
+            ability2.sprite = Resources.Load("PumpkinAbilityIcon2", typeof (Sprite)) as Sprite;
+
+            if (gourdAbilityOneCooldown <= 0)
+            {
+                ability1text.text = "Ready";
+            }
+            else
+            {
+                ability1text.text = "Charging...";
+            }
+
+            if (gourdAbilityTwoCooldown <= 0)
+            {
+                ability2text.text = "Ready";
+            }
+            else
+            {
+                ability2text.text = "Charging...";
+            }
         }
 
         if (maskEquipped == "SnailMask")
@@ -157,6 +204,27 @@ public class PlayerController : MonoBehaviour
             else if (movement.y < 0)
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = snailMaskDown;
+            }
+
+            ability1.sprite = Resources.Load("SnailAbilityIcon1", typeof (Sprite)) as Sprite;
+            ability2.sprite = Resources.Load("SnailAbilityIcon2", typeof (Sprite)) as Sprite;
+
+            if (snailAbilityOneActive)
+            {
+                ability1text.text = "Ready";
+            }
+            else
+            {
+                ability1text.text = "Charging...";
+            }
+
+            if (snailAbilityTwoCooldown <= 0)
+            {
+                ability2text.text = "Ready";
+            }
+            else
+            {
+                ability2text.text = "Charging...";
             }
         }
     }

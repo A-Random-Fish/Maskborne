@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 928b4701ec4e38c479b70c7df228a623
+guid: 1a73065c82069ab4aa6437198a57cff6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4507162162781784842
-    second: Border_0
-  - first:
-      213: 9025258261241886631
-    second: Border_1
+      213: -8137250834211292996
+    second: WolfAbilityIcon1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 45
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Border_0
+      name: WolfAbilityIcon1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 85
-        height: 216
+        width: 45
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0b80b96b18ac8e30800000000000000
-      internalID: 4507162162781784842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Border_1
-      rect:
-        serializedVersion: 2
-        x: 299
-        y: 0
-        width: 85
-        height: 216
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a77b7b1298204d70800000000000000
-      internalID: 9025258261241886631
+      spriteID: cb8b592ba7da21f80800000000000000
+      internalID: -8137250834211292996
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Border_0: 4507162162781784842
-      Border_1: 9025258261241886631
+      WolfAbilityIcon1_0: -8137250834211292996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

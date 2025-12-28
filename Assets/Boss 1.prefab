@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss1Script
   sightRange: 10
-  moveSpeed: 1.5
+  normalSpeed: 1.5
   minion: {fileID: 4477118949600905625, guid: ced96dc0fd2a6ac43b54259ee9251b7f, type: 3}
 --- !u!1 &5200024176748678701
 GameObject:
