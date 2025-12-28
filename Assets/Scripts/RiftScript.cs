@@ -5,6 +5,8 @@ public class RiftScript : MonoBehaviour
 {
     [SerializeField] public bool keyCollected;
 
+    [SerializeField] bool tutorialRift;
+
     Animator anim;
     GameObject player;
 
@@ -27,6 +29,15 @@ public class RiftScript : MonoBehaviour
         if (other.CompareTag("player") && keyCollected)
         {
             Destroy(player);
+
+            if (tutorialRift)
+            {
+                GameObject bossDeadText = GameObject.Find("BossDeadText");
+                bossDeadText.SetActive(false);
+
+                IntroText it = GameObject.Find("IntroText").GetComponent<IntroText>();
+                it.RiftText();
+            }
         }
     }
 }
