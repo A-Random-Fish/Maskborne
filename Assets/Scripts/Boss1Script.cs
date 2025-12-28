@@ -32,4 +32,15 @@ public class Boss1Script : MonoBehaviour
             timer = 0;
         }
     }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Flames"))
+        {
+            moveSpeed = moveSpeed / 2f;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        }
+    }
 }

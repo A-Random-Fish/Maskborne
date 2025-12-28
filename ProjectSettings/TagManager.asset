@@ -12,6 +12,7 @@ TagManager:
   - Rooms
   - ClosedRoom
   - Wall
+  - Flames
   layers:
   - Default
   - TransparentFX

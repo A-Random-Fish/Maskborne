@@ -22,4 +22,15 @@ public class ChaserNoRoomRestriction : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, moveSpeed * Time.deltaTime);
         }
     }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Flames"))
+        {
+            moveSpeed = moveSpeed / 2f;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        }
+    }
 }

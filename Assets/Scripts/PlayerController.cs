@@ -10,13 +10,6 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movement;
     [SerializeField] float moveSpeed = 5f;
-    [SerializeField] float rollSpeed = 1f;
-    [SerializeField] float rollDuration;
-    [SerializeField] float wolfAbilityOneCooldown;
-    [SerializeField] float wolfAbilityTwoCooldown;
-    [SerializeField] float abilityThreeCooldown;
-
-    public int playerCurrentDmg = 0;
 
     public bool canMove;
 
@@ -38,6 +31,12 @@ public class PlayerController : MonoBehaviour
     [Header("Moneys")]
     public int souls;
 
+    [Header("Wolf Mask")]
+    [SerializeField] float wolfAbilityOneCooldown;
+    [SerializeField] float wolfAbilityTwoCooldown;
+    [SerializeField] float rollSpeed = 1f;
+    [SerializeField] float rollDuration;
+
     [Header("Snail Mask")]
     [SerializeField] GameObject shellBoomerang;
     [SerializeField] Transform boomerangSpawnLoc;
@@ -48,7 +47,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("GourdMask")]
     [SerializeField] GameObject gourdBoulder;
+    [SerializeField] GameObject JackOFlames;
     float gourdAbilityOneCooldown;
+    float gourdAbilityTwoCooldown;
 
     //KB
     bool KBActive;
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
         wolfAbilityTwoCooldown -= Time.deltaTime;
         snailAbilityTwoCooldown -= Time.deltaTime;
         gourdAbilityOneCooldown -= Time.deltaTime;
+        gourdAbilityTwoCooldown -= Time.deltaTime;
 
         //Damage negation thingies lol
         if (rollDuration > 0f) //Wolf mask dodge roll
@@ -107,7 +109,6 @@ public class PlayerController : MonoBehaviour
         if (wolfAbilityOneCooldown < 0f)
         {
             rotStop = false;
-            playerCurrentDmg = 0;
         }
 
         //swapping menu
@@ -193,7 +194,6 @@ public class PlayerController : MonoBehaviour
                 case "WolfMask": //Performs the wolf claw ability, also makes sure the rotation stops of the aimer.
                     if (wolfAbilityOneCooldown < 0f)
                     {
-                        playerCurrentDmg = 5;
                         rotStop = true;
                         wolfAbilityOneCooldown = 0.5f;
                         WolfClawAnim.SetBool("Active", true);
@@ -209,7 +209,6 @@ public class PlayerController : MonoBehaviour
                 case "SnailMask":
                     if (snailAbilityOneActive)
                     {
-                        playerCurrentDmg = 4;
                         snailAbilityOneActive = false;
                         Instantiate(shellBoomerang, boomerangSpawnLoc.position, Quaternion.identity);
                     }
@@ -227,13 +226,16 @@ public class PlayerController : MonoBehaviour
                 case "WolfMask": //Ability to do a quick dash with a cooldown.
                     if (wolfAbilityTwoCooldown < 0f)
                     {
-                        playerCurrentDmg = 0;
                         wolfAbilityTwoCooldown = 1f;
                         rollDuration = 0.2f;
                     }
                     break;
-                case "FerretMask":
-                    Console.WriteLine("");
+                case "GourdMask":
+                    if (gourdAbilityTwoCooldown < 0f)
+                    {
+                        gourdAbilityTwoCooldown = 5f;
+                        Instantiate(JackOFlames, boomerangSpawnLoc.position, Quaternion.identity);
+                    }
                     break;
                 case "SnailMask":
                     if (snailAbilityTwoCooldown < 0f)
@@ -245,25 +247,6 @@ public class PlayerController : MonoBehaviour
                     }
                     break;
 
-            }
-        }
-    }
-
-    public void Ability3(InputAction.CallbackContext context)
-    {
-        if (context.performed && !swapping)
-        {
-            switch (maskEquipped)
-            {
-                case "WolfMask":
-                    Console.WriteLine("");
-                    break;
-                case "FerretMask":
-                    Console.WriteLine("");
-                    break;
-                case "SnailMask":
-                    Console.WriteLine("");
-                    break;
             }
         }
     }
