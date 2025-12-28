@@ -53,7 +53,7 @@ public class ShellBoomerang : MonoBehaviour
         if (other.gameObject.CompareTag("monster"))
         {
             MonsterHealthComponent mhc = other.gameObject.GetComponent<MonsterHealthComponent>();
-            mhc.MdamageIgnoreIframes(0.1f);
+            mhc.MdamageIgnoreIframes(0.2f);
         }
     }
 }

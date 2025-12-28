@@ -187,7 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterHealthComponent
   playerHealth: {fileID: 0}
   damage: 1
-  soulCount: 10
+  maxMHealth: 10
+  soulCount: 1
 --- !u!61 &4998072141786446130
 BoxCollider2D:
   m_ObjectHideFlags: 0

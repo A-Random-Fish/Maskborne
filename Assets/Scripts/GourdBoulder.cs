@@ -8,6 +8,8 @@ public class GourdBoulder : MonoBehaviour
 
     float speed = 0.3f;
 
+    [SerializeField] GameObject gourdAOE;
+
     void Start()
     {
         pc = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -25,11 +27,15 @@ public class GourdBoulder : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Gourd Smash");
-        if (other.gameObject.GetComponent<MonsterHealthComponent>() != null)
-            other.gameObject.GetComponent<MonsterHealthComponent>().Mdamage(1);
+        if (other.CompareTag("Wall") || other.CompareTag("monster"))
+        {
+            Debug.Log("Gourd Smash");
+            if (other.gameObject.GetComponent<MonsterHealthComponent>() != null)
+                other.gameObject.GetComponent<MonsterHealthComponent>().Mdamage(1);
+                Instantiate(gourdAOE, transform.position,Quaternion.identity);
 
-        if (other.gameObject != null)
-            Destroy(this.gameObject);
+            if (other.gameObject != null)
+                Destroy(this.gameObject);
+        }
     }
 }

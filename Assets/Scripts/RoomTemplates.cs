@@ -16,6 +16,15 @@ public class RoomTemplates : MonoBehaviour
     public float waitTime;
     bool spawnedBoss;
     public GameObject boss;
+    GameObject bossObject;
+
+    GameObject bossText;
+
+    void Awake()
+    {
+        bossText = GameObject.Find("BossDeadText");
+        bossText.SetActive(false);
+    }
 
     void Update()
     {
@@ -25,7 +34,7 @@ public class RoomTemplates : MonoBehaviour
             {
                 if (i == rooms.Count-1)
                 {
-                    Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
+                    bossObject = Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
                     spawnedBoss = true;
                 }
             }
@@ -33,6 +42,11 @@ public class RoomTemplates : MonoBehaviour
         else
         {
             waitTime -= Time.deltaTime;
+        }
+
+        if (spawnedBoss == true && bossObject == null)
+        {
+            bossText.SetActive(true);
         }
     }
 }

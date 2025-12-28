@@ -7,7 +7,7 @@ public class MonsterHealthComponent : MonoBehaviour
 
     [SerializeField] int damage;
     float mHealth;
-    int maxMHealth = 10;
+    [SerializeField] int maxMHealth = 10;
 
     float iFrames;
 
@@ -67,6 +67,11 @@ public class MonsterHealthComponent : MonoBehaviour
         for (int i = 0; i < soulCount; i++)
         {
             Instantiate(Resources.Load("Soul") as GameObject, new Vector2(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f)), Quaternion.identity);
+        }
+
+        if (gameObject.layer == 9)
+        {
+            Instantiate(Resources.Load("RiftKey") as GameObject, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
     }

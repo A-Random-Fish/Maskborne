@@ -54,6 +54,14 @@ public class PlayerController : MonoBehaviour
     bool KBActive;
     public float KBDuration;
 
+    [Header("Player Sprites")]
+    [SerializeField] Sprite wolfMaskUp;
+    [SerializeField] Sprite wolfMaskDown;
+    [SerializeField] Sprite gourdMaskUp;
+    [SerializeField] Sprite gourdMaskDown;
+    [SerializeField] Sprite snailMaskUp;
+    [SerializeField] Sprite snailMaskDown;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();   //Grabs the Rigidbody2D without having to place it into the script
@@ -113,6 +121,43 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1f;
             maskWheel.SetActive(false);
         }
+
+        //Player Sprite Changing
+        if (maskEquipped == "WolfMask")
+        {
+            if (movement.y > 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = wolfMaskUp;
+            }
+            else if (movement.y < 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = wolfMaskDown;
+            }
+        }
+
+        if (maskEquipped == "GourdMask")
+        {
+            if (movement.y > 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = gourdMaskUp;
+            }
+            else if (movement.y < 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = gourdMaskDown;
+            }
+        }
+
+        if (maskEquipped == "SnailMask")
+        {
+            if (movement.y > 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = snailMaskUp;
+            }
+            else if (movement.y < 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = snailMaskDown;
+            }
+        }
     }
 
     private void FixedUpdate() //Movement for the player
@@ -169,12 +214,6 @@ public class PlayerController : MonoBehaviour
                         Instantiate(shellBoomerang, boomerangSpawnLoc.position, Quaternion.identity);
                     }
                     break;
-                case "EelMask":
-                    Console.WriteLine("");
-                    break;
-                case "CrowMask":
-                    Console.WriteLine("");
-                    break;
             }
         }
     }
@@ -205,12 +244,6 @@ public class PlayerController : MonoBehaviour
                         Instantiate(snailShell, this.gameObject.transform.position, Quaternion.identity);
                     }
                     break;
-                case "CrowMask":
-                    Console.WriteLine("");
-                    break;
-                case "EelMask":
-                    Console.WriteLine("");
-                    break;
 
             }
         }
@@ -231,13 +264,6 @@ public class PlayerController : MonoBehaviour
                 case "SnailMask":
                     Console.WriteLine("");
                     break;
-                case "EelMask":
-                    Console.WriteLine("");
-                    break;
-                case "CrowMask":
-                    Console.WriteLine("");
-                    break;
-
             }
         }
     }
