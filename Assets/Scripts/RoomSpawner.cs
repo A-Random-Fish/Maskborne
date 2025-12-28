@@ -60,5 +60,10 @@ public class RoomSpawner : MonoBehaviour
             }
             spawned = true;
         }
+
+        if (other.gameObject == null)
+        {
+            return;
+        }
     }
 }

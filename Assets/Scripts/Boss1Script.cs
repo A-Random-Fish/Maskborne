@@ -18,18 +18,15 @@ public class Boss1Script : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (Vector2.Distance (Player.transform.position, transform.position) < sightRange)
         {
-            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, moveSpeed);
+            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, moveSpeed * Time.deltaTime);
             timer += Time.deltaTime;
         }
-    }
 
-    void Update()
-    {
-        if (timer >= 3)
+        if (timer >= 2)
         {
             Instantiate(minion, transform.position, Quaternion.identity);
             timer = 0;

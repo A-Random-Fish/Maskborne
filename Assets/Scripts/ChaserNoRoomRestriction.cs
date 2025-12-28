@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChaserEnemy : MonoBehaviour
+public class ChaserNoRoomRestriction : MonoBehaviour
 {
     GameObject Player;
     Rigidbody2D rb;
@@ -13,12 +13,11 @@ public class ChaserEnemy : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
-        ed = GetComponent<EnemyDetection>();
     }
 
     void Update()
     {
-        if (Vector2.Distance (Player.transform.position, transform.position) < sightRange && ed.playerInRoom)
+        if (Vector2.Distance (Player.transform.position, transform.position) < sightRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, moveSpeed * Time.deltaTime);
         }

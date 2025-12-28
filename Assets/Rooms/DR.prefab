@@ -1240,6 +1240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraLock
   camPos: {fileID: 9005624997331353991}
+  enemies:
+  - {fileID: 5658117524158208013}
+  - {fileID: 4940633400600960110}
+  - {fileID: 8991836381387290688}
 --- !u!61 &1879436660981068765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1485,6 +1489,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4077749036719904190, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
   m_PrefabInstance: {fileID: 460889108103981005}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4940633400600960110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4824991089685592995, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
+  m_PrefabInstance: {fileID: 460889108103981005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &896326534942335918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1547,6 +1556,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4077749036719904190, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
   m_PrefabInstance: {fileID: 896326534942335918}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5658117524158208013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4824991089685592995, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
+  m_PrefabInstance: {fileID: 896326534942335918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4484640032290210787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1607,5 +1621,10 @@ PrefabInstance:
 --- !u!4 &480679535541884509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4077749036719904190, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
+  m_PrefabInstance: {fileID: 4484640032290210787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8991836381387290688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4824991089685592995, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
   m_PrefabInstance: {fileID: 4484640032290210787}
   m_PrefabAsset: {fileID: 0}

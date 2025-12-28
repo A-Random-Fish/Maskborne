@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8366146233854023768}
   - component: {fileID: 3897985392854107988}
   - component: {fileID: 6389704119481031903}
-  - component: {fileID: 1153244164840751494}
+  - component: {fileID: 2490229308094975673}
   - component: {fileID: 1072526323714864805}
   - component: {fileID: 5797285512748765132}
   m_Layer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   damage: 1
   maxMHealth: 3
   soulCount: 0
---- !u!114 &1153244164840751494
+--- !u!114 &2490229308094975673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,11 +120,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4477118949600905625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f115aaa47a45a4ab72ebc4e9b6f9b4, type: 3}
+  m_Script: {fileID: 11500000, guid: a851018566790ac4bb2ca08e7a06d341, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChaserEnemy
-  sightRange: 7
-  moveSpeed: 0.075
+  m_EditorClassIdentifier: Assembly-CSharp::ChaserNoRoomRestriction
+  sightRange: 8
+  moveSpeed: 5
 --- !u!61 &1072526323714864805
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -194,10 +194,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &9051980862401899306
 GameObject:
   m_ObjectHideFlags: 0

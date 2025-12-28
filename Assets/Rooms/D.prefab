@@ -705,6 +705,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraLock
   camPos: {fileID: 719037644028601220}
+  enemies:
+  - {fileID: 1555017088163351142}
+  - {fileID: 6176218144129854510}
 --- !u!61 &4828566088136410406
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1087,6 +1090,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4077749036719904190, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
   m_PrefabInstance: {fileID: 1676353330005989261}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6176218144129854510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4824991089685592995, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
+  m_PrefabInstance: {fileID: 1676353330005989261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6296393024347959749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1144,6 +1152,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
+--- !u!1 &1555017088163351142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4824991089685592995, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}
+  m_PrefabInstance: {fileID: 6296393024347959749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8067736097588798587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4077749036719904190, guid: ab880dfab0b76e24fa1a7d2fdf9e9e7d, type: 3}

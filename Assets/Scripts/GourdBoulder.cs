@@ -18,6 +18,8 @@ public class GourdBoulder : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         transform.rotation = rotation;
+
+        Invoke("Despawn", 0.5f);
     }
 
     void FixedUpdate()
@@ -37,5 +39,10 @@ public class GourdBoulder : MonoBehaviour
             if (other.gameObject != null)
                 Destroy(this.gameObject);
         }
+    }
+
+    void Despawn()
+    {
+        Destroy(gameObject);
     }
 }
