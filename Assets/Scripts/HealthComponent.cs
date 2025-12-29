@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
@@ -21,6 +21,10 @@ public class HealthComponent : MonoBehaviour
     {
 
         iFrames -= Time.deltaTime;
+        if (health <= 0)
+        {
+            Invoke("Death", 0.25f);
+        }
     }
 
     public void Damage(int damage)
@@ -31,14 +35,11 @@ public class HealthComponent : MonoBehaviour
             Debug.Log("Hit");
             health -= damage;
         }
-        if (health <= 0)
-        {
-            Invoke("Death", 0.25f);
-        }
     }
 
     void Death()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene(4);
+
     }
 }
