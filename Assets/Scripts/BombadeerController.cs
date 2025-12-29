@@ -26,7 +26,7 @@ public class BombadeerController : MonoBehaviour
 
         playerToMeDistance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (playerToMeDistance < 12f && !rocketLaunched && rocketCooldown < 0f)
+        if (playerToMeDistance < 10f && !rocketLaunched && rocketCooldown < 0f)
         {
             rocketLaunched = true;
             Invoke("Attack", 1f);
