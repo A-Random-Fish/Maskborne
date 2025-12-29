@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
             ability1.sprite = Resources.Load("WolfAbilityIcon1", typeof (Sprite)) as Sprite;
             ability2.sprite = Resources.Load("WolfAbilityIcon2", typeof (Sprite)) as Sprite;
 
-            if (wolfAbilityOneCooldown <= 0)
+            if (wolfAbilityOneCooldown <= 0 + (0.5f/100*StaticData.cooldownDecrease))
             {
                 ability1text.text = "Ready";
             }
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
                 ability1text.text = "Charging...";
             }
 
-            if (wolfAbilityTwoCooldown <= 0)
+            if (wolfAbilityTwoCooldown <= 0 + (1f/100*StaticData.cooldownDecrease))
             {
                 ability2text.text = "Ready";
             }
@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
             ability1.sprite = Resources.Load("PumpkinAbilityIcon1", typeof (Sprite)) as Sprite;
             ability2.sprite = Resources.Load("PumpkinAbilityIcon2", typeof (Sprite)) as Sprite;
 
-            if (gourdAbilityOneCooldown <= 0)
+            if (gourdAbilityOneCooldown <= 0 + (2f/100*StaticData.cooldownDecrease))
             {
                 ability1text.text = "Ready";
             }
@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
                 ability1text.text = "Charging...";
             }
 
-            if (gourdAbilityTwoCooldown <= 0)
+            if (gourdAbilityTwoCooldown <= 0 + (20f/100*StaticData.cooldownDecrease))
             {
                 ability2text.text = "Ready";
             }
@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
                 ability1text.text = "Charging...";
             }
 
-            if (snailAbilityTwoCooldown <= 0)
+            if (snailAbilityTwoCooldown <= 0 + (5f/100*StaticData.cooldownDecrease))
             {
                 ability2text.text = "Ready";
             }
@@ -260,18 +260,26 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case "WolfMask": //Performs the wolf claw ability, also makes sure the rotation stops of the aimer.
-                    if (wolfAbilityOneCooldown < 0f)
+                    if (wolfAbilityOneCooldown < 0f + (0.5f/100*StaticData.cooldownDecrease))
                     {
                         rotStop = true;
                         wolfAbilityOneCooldown = 0.5f;
                         WolfClawAnim.SetBool("Active", true);
+                        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+                        CursorAimer.transform.rotation = rotation;
                     }
                     break;
                 case "GourdMask":
-                    if (gourdAbilityOneCooldown < 0f)
+                    if (gourdAbilityOneCooldown < 0f + (2f/100*StaticData.cooldownDecrease))
                     {
                         gourdAbilityOneCooldown = 2f;
                         Instantiate(gourdBoulder, boomerangSpawnLoc.position, Quaternion.identity);
+                        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+                        CursorAimer.transform.rotation = rotation;
                     }
                     break;
                 case "SnailMask":
@@ -292,21 +300,21 @@ public class PlayerController : MonoBehaviour
             switch (maskEquipped)
             {
                 case "WolfMask": //Ability to do a quick dash with a cooldown.
-                    if (wolfAbilityTwoCooldown < 0f)
+                    if (wolfAbilityTwoCooldown < 0f + (1f/100*StaticData.cooldownDecrease))
                     {
                         wolfAbilityTwoCooldown = 1f;
                         rollDuration = 0.2f;
                     }
                     break;
                 case "GourdMask":
-                    if (gourdAbilityTwoCooldown < 0f)
+                    if (gourdAbilityTwoCooldown < 0f + (20f/100*StaticData.cooldownDecrease))
                     {
                         gourdAbilityTwoCooldown = 20f;
                         Instantiate(JackOFlames, boomerangSpawnLoc.position, Quaternion.identity);
                     }
                     break;
                 case "SnailMask":
-                    if (snailAbilityTwoCooldown < 0f)
+                    if (snailAbilityTwoCooldown < 0f + (5f/100*StaticData.cooldownDecrease))
                     {
                         snailAbilityTwoCooldown = 5f;
                         invulnerable = true;

@@ -19,7 +19,7 @@ public class ClawArcScript : MonoBehaviour
         if (other.gameObject.CompareTag("monster"))
         {
             MonsterHealthComponent mhc = other.gameObject.GetComponent<MonsterHealthComponent>();
-            mhc.Mdamage(1);
+            mhc.Mdamage(2f + StaticData.damageIncrease);
         }
     }
 }

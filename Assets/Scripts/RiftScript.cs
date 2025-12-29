@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RiftScript : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class RiftScript : MonoBehaviour
         if (other.CompareTag("player") && keyCollected)
         {
             Destroy(player);
+            Invoke("LoadShops", 5f);
 
             if (tutorialRift)
             {
@@ -39,5 +41,10 @@ public class RiftScript : MonoBehaviour
                 it.RiftText();
             }
         }
+    }
+
+    void LoadShops()
+    {
+        SceneManager.LoadScene(2);
     }
 }

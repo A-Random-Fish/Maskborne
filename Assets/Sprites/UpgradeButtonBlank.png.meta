@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b421413584e60944fb6ce9e5abe90a18
+guid: 2a9b1ec607d96854fb0169610d623811
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -112968808170193824
-    second: eye_0
+      213: 4787222673520331439
+    second: UpgradeButtonBlank_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eye_0
+      name: UpgradeButtonBlank_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 72
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06cf05ea777ae6ef0800000000000000
-      internalID: -112968808170193824
+      spriteID: faa00e368a1af6240800000000000000
+      internalID: 4787222673520331439
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eye_0: -112968808170193824
+      UpgradeButtonBlank_0: 4787222673520331439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

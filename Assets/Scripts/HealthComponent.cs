@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
-    [SerializeField] public int maxHealth = 10;
-    [SerializeField] public int health;
+    [SerializeField] public float maxHealth = 10;
+    [SerializeField] public float health;
 
     PlayerController pc;
 
@@ -12,6 +12,7 @@ public class HealthComponent : MonoBehaviour
 
     void Start()
     {
+        maxHealth = 10 + StaticData.healthIncrease;
         health = maxHealth;
         pc = GameObject.Find("Player").GetComponent<PlayerController>();
     }

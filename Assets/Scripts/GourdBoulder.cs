@@ -33,7 +33,7 @@ public class GourdBoulder : MonoBehaviour
         {
             Debug.Log("Gourd Smash");
             if (other.gameObject.GetComponent<MonsterHealthComponent>() != null)
-                other.gameObject.GetComponent<MonsterHealthComponent>().Mdamage(1);
+                other.gameObject.GetComponent<MonsterHealthComponent>().Mdamage(1 + StaticData.damageIncrease);
                 Instantiate(gourdAOE, transform.position,Quaternion.identity);
 
             if (other.gameObject != null)

@@ -51,6 +51,8 @@ public class MonsterHealthComponent : MonoBehaviour
         {
             Invoke("Death", 0.25f);
         }
+
+        DamageFlash();
     }
     public void MdamageIgnoreIframes(float mDamage)
     {
@@ -60,6 +62,8 @@ public class MonsterHealthComponent : MonoBehaviour
         {
             Invoke("Death", 0.25f);
         }
+
+        DamageFlash();
     }
 
     void Death()
@@ -74,5 +78,18 @@ public class MonsterHealthComponent : MonoBehaviour
             Instantiate(Resources.Load("RiftKey") as GameObject, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
+    }
+
+    void DamageFlash()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.color = new Color(255, 125, 125);
+        Invoke("EndDamageFlash", 0.1f);
+    }
+
+    void EndDamageFlash()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.color = Color.white;
     }
 }

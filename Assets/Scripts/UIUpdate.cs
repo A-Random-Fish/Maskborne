@@ -17,6 +17,6 @@ public class UIUpdate : MonoBehaviour
     void Update()
     {
         soulsText.text = StaticData.souls.ToString();
-        healthText.text = pc.health.ToString() + "/10";
+        healthText.text = pc.health.ToString();
     }
 }

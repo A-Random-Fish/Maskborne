@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b421413584e60944fb6ce9e5abe90a18
+guid: ce337e6fd592c6046be9482902004d96
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -112968808170193824
-    second: eye_0
+      213: 149361072398010396
+    second: bombarder_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eye_0
+      name: bombarder_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 9
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06cf05ea777ae6ef0800000000000000
-      internalID: -112968808170193824
+      spriteID: c180e8f9a13a21200800000000000000
+      internalID: 149361072398010396
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eye_0: -112968808170193824
+      bombarder_0: 149361072398010396
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
