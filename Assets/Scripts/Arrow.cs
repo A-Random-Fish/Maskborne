@@ -15,6 +15,7 @@ public class Arrow : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         transform.rotation = rotation;
+        Invoke("Despawn", 0.75f);
     }
 
     void FixedUpdate()
@@ -30,8 +31,13 @@ public class Arrow : MonoBehaviour
             if (other.gameObject.GetComponent<HealthComponent>() != null)
                 other.gameObject.GetComponent<HealthComponent>().health -= 1;
 
-            if (other.gameObject != null)
-                Destroy(this.gameObject);
+            Destroy(this.gameObject);
+                
         }
+    }
+
+    void Despawn()
+    {
+        Destroy(gameObject);
     }
 }

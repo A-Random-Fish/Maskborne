@@ -12,13 +12,16 @@ public class ChaserEnemy : MonoBehaviour
 
     [SerializeField] GameObject crossbow;
 
+    int randInt;
+
     void Start()
     {
         Player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         ed = GetComponent<EnemyDetection>();
 
-        int randInt = Random.Range(0,1);
+        randInt = Random.Range(0,2);
+        Debug.Log(randInt);
 
         if (randInt == 1)
         {
