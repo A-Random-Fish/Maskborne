@@ -21,4 +21,17 @@ public class Arrow : MonoBehaviour
     {
         transform.Translate(Vector2.up * speed);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Wall") || other.CompareTag("player"))
+        {
+            Debug.Log("Gourd Smash");
+            if (other.gameObject.GetComponent<HealthComponent>() != null)
+                other.gameObject.GetComponent<HealthComponent>().health -= 1;
+
+            if (other.gameObject != null)
+                Destroy(this.gameObject);
+        }
+    }
 }
