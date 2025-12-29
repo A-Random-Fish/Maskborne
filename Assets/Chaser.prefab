@@ -278,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   sightRange: 7
   normalSpeed: 3
+  crossbow: {fileID: 1947153271770614240, guid: 074a54446368db248b9722d6131df6ee, type: 3}
 --- !u!114 &7045917383417362666
 MonoBehaviour:
   m_ObjectHideFlags: 0

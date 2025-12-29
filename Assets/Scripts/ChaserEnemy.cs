@@ -10,11 +10,21 @@ public class ChaserEnemy : MonoBehaviour
     [SerializeField] float normalSpeed;
     float moveSpeed;
 
+    [SerializeField] GameObject crossbow;
+
     void Start()
     {
         Player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         ed = GetComponent<EnemyDetection>();
+
+        int randInt = Random.Range(0,1);
+
+        if (randInt == 1)
+        {
+            Instantiate(crossbow, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 
     void Update()
