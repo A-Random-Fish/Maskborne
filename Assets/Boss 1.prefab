@@ -262,7 +262,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3368b18bcf8e28542b23f427f4aa8735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss1Script
-  sightRange: 10
+  sightRange: 9
   normalSpeed: 1.5
   minion: {fileID: 4477118949600905625, guid: ced96dc0fd2a6ac43b54259ee9251b7f, type: 3}
 --- !u!212 &38069838171588074
